@@ -4,7 +4,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-
+import { ViewSchoolsComponent } from '../shared/components/view-schools/view-schools.component';
 @Component({
   selector: 'app-home-page',
   standalone: true,
@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     MatIconModule,
     // MatButtonModule
+    ViewSchoolsComponent
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
