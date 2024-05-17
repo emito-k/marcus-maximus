@@ -4,23 +4,27 @@ import { ViewSchoolCardComponent } from '../view-school-card/view-school-card.co
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { ISchool } from '../../models/school.interface';
 import { SchoolService } from '../../services/school.service';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-view-schools',
   standalone: true,
   imports: [
     ViewSchoolCardComponent,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatProgressSpinnerModule
   ],
   templateUrl: './view-schools.component.html',
   styleUrl: './view-schools.component.css'
 })
 export class ViewSchoolsComponent {
   @Input() schools: ISchool[] = [];
+  loading: boolean = true;
 
   constructor(private schoolService: SchoolService) { }
 
   async ngOnInit() {
     this.schools = await this.schoolService.getSchools();
+    this.loading = false;
   }
 }

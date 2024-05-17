@@ -21,6 +21,9 @@ export class SchoolService {
   }
 
   async getSchools() : Promise<ISchool[]> {
+    // add a delay to simulate network latency
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
     return [
       {
         school_name: 'School Name 1',
