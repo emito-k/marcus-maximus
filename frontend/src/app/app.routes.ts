@@ -1,3 +1,18 @@
 import { Routes } from '@angular/router';
+import { AccountPageComponent } from './account-page/account-page.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { ModulePageComponent } from './module-page/module-page.component';
+import { ModuleSettingsPageComponent } from './module-settings-page/module-settings-page.component';
+import { SchoolPageComponent } from './school-page/school-page.component';
+import { SchoolSettingsPageComponent } from './school-settings-page/school-settings-page.component';
+import { ViewSchoolPageComponent } from './view-school-page/view-school-page.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  { path: 'home', component: HomePageComponent },
+  { path: 'account', component: AccountPageComponent },
+  { path: 'module', component: ModulePageComponent },
+  { path: 'module-settings', component: ModuleSettingsPageComponent },
+  { path: 'school', component: SchoolPageComponent },
+  { path: 'school-settings', component: SchoolSettingsPageComponent },
+  { path: 'view-school', component: ViewSchoolPageComponent },
+];
