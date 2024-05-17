@@ -15,8 +15,8 @@ import { ISchool } from '../shared/models/school.interface';
     MatFormFieldModule,
     FormsModule,
     MatIconModule,
-    // MatButtonModule
-    ViewSchoolsComponent
+    MatButtonModule,
+    ViewSchoolsComponent,
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
@@ -24,17 +24,29 @@ import { ISchool } from '../shared/models/school.interface';
 export class HomePageComponent {
   schools: ISchool[] = [];
   loading: boolean = true;
+  searching: boolean = false;
 
   constructor(private schoolService: SchoolService) { }
 
   async ngOnInit() {
+    await this.getSchools();
+  }
+
+  async getSchools() {
+    this.loading = true;
     this.schools = await this.schoolService.getSchools();
     this.loading = false;
   }
 
   async searchForSchools(searchTerm: string) {
+    this.searching = true;
     this.loading = true;
     this.schools = await this.schoolService.getSchoolsBySearch(searchTerm);
     this.loading = false;
+  }
+
+  async clearSearch() {
+    this.searching = false;
+    await this.getSchools();
   }
 }
