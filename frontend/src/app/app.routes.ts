@@ -6,6 +6,8 @@ import { ModuleSettingsPageComponent } from './module-settings-page/module-setti
 import { SchoolPageComponent } from './school-page/school-page.component';
 import { SchoolSettingsPageComponent } from './school-settings-page/school-settings-page.component';
 import { ViewSchoolPageComponent } from './view-school-page/view-school-page.component';
+import { MyModulesPageComponent } from './my-modules-page/my-modules-page.component';
+import { MySchoolsPageComponent } from './my-schools-page/my-schools-page.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomePageComponent },
@@ -15,4 +17,6 @@ export const routes: Routes = [
   { path: 'school', component: SchoolPageComponent },
   { path: 'school-settings', component: SchoolSettingsPageComponent },
   { path: 'view-school', component: ViewSchoolPageComponent },
+  { path: 'modules', component: MyModulesPageComponent },
+  { path: 'schools', component: MySchoolsPageComponent }
 ];

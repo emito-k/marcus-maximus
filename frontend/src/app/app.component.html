@@ -5,19 +5,31 @@
   <mat-drawer-content>
     </mat-drawer-content>
     </mat-drawer-container> -->
-    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
       <div style="display: flex; align-items: center; padding: 10px;">
         <!-- Small logo image next to the text -->
         <img src="assets/caesar-svgrepo-com.svg" alt="logo" style="width: 30px; height: 30px; margin-right: 10px;">
         <h2 class="w3-bar-item" style="margin: 0;">Collegia</h2>
       </div>
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-home"></i> Home</a>
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-home"></i> Schools</a>
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-home"></i> Modules</a>
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-home"></i> My Account</a>
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-home"></i> Logout</a>
+      <a [routerLink]="['/home']" routerLinkActive="router-link-active"  class="w3-bar-item w3-button"><i class="fa fa-home"></i> Home</a>
+      <a [routerLink]="['/schools']" routerLinkActive="router-link-active"  class="w3-bar-item w3-button"><i class="fa fa-home"></i> Schools</a>
+      <a [routerLink]="['/modules']" routerLinkActive="router-link-active"  class="w3-bar-item w3-button"><i class="fa fa-home"></i> Modules</a>
+      <a [routerLink]="['/account']" routerLinkActive="router-link-active"  class="w3-bar-item w3-button"><i class="fa fa-home"></i> My Account</a>
+      <a [routerLink]="['/home']" routerLinkActive="router-link-active"  class="w3-bar-item w3-button"><i class="fa fa-home"></i> Logout</a>
+
+    <!--
+      export const routes: Routes = [
+  { path: 'home', component: HomePageComponent },
+  { path: 'account', component: AccountPageComponent },
+  { path: 'module', component: ModulePageComponent },
+  { path: 'module-settings', component: ModuleSettingsPageComponent },
+  { path: 'school', component: SchoolPageComponent },
+  { path: 'school-settings', component: SchoolSettingsPageComponent },
+  { path: 'view-school', component: ViewSchoolPageComponent },
+];
+     -->
     </div>
-    <div style="margin-left:15%">
+    <div style="margin-left:25%">
       <div class="w3-container">
         <router-outlet></router-outlet>
       </div>
