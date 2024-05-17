@@ -5,18 +5,21 @@
   <mat-drawer-content>
     </mat-drawer-content>
     </mat-drawer-container> -->
-    <div class="w3-sidebar w3-bar-block" style="width:25%">
-      <a href="#" class="w3-bar-item w3-button">Link 1</a>
-      <a href="#" class="w3-bar-item w3-button">Link 2</a>
-      <a href="#" class="w3-bar-item w3-button">Link 3</a>
-    </div>
-    <div style="margin-left:25%">
-      <div class="w3-container w3-teal">
-        <h1>My Page</h1>
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
+      <div style="display: flex; align-items: center; padding: 10px;">
+        <!-- Small logo image next to the text -->
+        <img src="assets/caesar-svgrepo-com.svg" alt="logo" style="width: 30px; height: 30px; margin-right: 10px;">
+        <h2 class="w3-bar-item" style="margin: 0;">Collegia</h2>
       </div>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-home"></i> Home</a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-home"></i> Schools</a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-home"></i> Modules</a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-home"></i> My Account</a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-home"></i> Logout</a>
+    </div>
+    <div style="margin-left:15%">
       <div class="w3-container">
-        <p>The w3-sidebar is used to add a sidebar to your website.</p>
-        <p>The w3-sidebar is a narrow vertical bar that is positioned alongside your web page.</p>
+        <router-outlet></router-outlet>
       </div>
     </div>
-  <router-outlet />
+
