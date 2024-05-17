@@ -1,7 +1,7 @@
 <form class="example-form">
   <mat-form-field class="example-full-width">
     <mat-label>Search</mat-label>
-    <input matInput type="text" placeholder="Search...">
+    <input matInput type="text" #search (keydown)="searchForSchools(search.value)" placeholder="Search...">
   </mat-form-field>
-  <app-view-schools></app-view-schools>
+  <app-view-schools [schools]="schools" [loading]="loading"></app-view-schools>
 </form>

@@ -72,4 +72,30 @@ export class SchoolService {
       }
     ];
   }
+
+  async getSchoolsBySearch(search: string) : Promise<ISchool[]> {
+    // add a delay to simulate network latency
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    return [
+      {
+        school_name: 'School Name 1',
+        school_id: 'School ID 1',
+        description: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.`,
+        thumbnail_url: 'https://via.placeholder.com/750x600',
+        profile_url: 'https://via.placeholder.com/509x500'
+      },
+      {
+        school_name: 'School Name 2',
+        school_id: 'School ID 2',
+        description: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.`,
+        thumbnail_url: 'https://via.placeholder.com/750x600',
+        profile_url: 'https://via.placeholder.com/509x500'
+      }
+    ];
+  }
 }

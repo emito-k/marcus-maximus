@@ -19,12 +19,5 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 })
 export class ViewSchoolsComponent {
   @Input() schools: ISchool[] = [];
-  loading: boolean = true;
-
-  constructor(private schoolService: SchoolService) { }
-
-  async ngOnInit() {
-    this.schools = await this.schoolService.getSchools();
-    this.loading = false;
-  }
+  @Input() loading: boolean = false;
 }
