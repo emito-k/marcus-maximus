@@ -1,7 +1,9 @@
 <h2>Settings</h2>
 
 <mat-tab-group>
-  <mat-tab label="School Info"> Content 1 </mat-tab>
+  <mat-tab label="School Info">
+    <app-school-information [school_id]="school_id"></app-school-information>
+  </mat-tab>
   <mat-tab label="Members"> Content 2 </mat-tab>
   <mat-tab label="Roles"> Content 3 </mat-tab>
   <mat-tab label="Modules"> Content 3 </mat-tab>
