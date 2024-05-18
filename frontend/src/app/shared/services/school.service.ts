@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ISchool } from '../models/school.interface';
+import { ISchoolModule } from '../models/school-module.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -95,6 +96,54 @@ export class SchoolService {
         bred for hunting.`,
         thumbnail_url: 'https://via.placeholder.com/750x600',
         profile_url: 'https://via.placeholder.com/509x500'
+      }
+    ];
+  }
+
+  async getSchoolModule(module_id: string) : Promise<ISchoolModule> {
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    return {
+      module_id: 'Module ID',
+      module_name: 'Module Name',
+      description: 'Module Description',
+      credits: 3
+    };
+  }
+
+  async getSchoolModules(school_id: string) : Promise<ISchoolModule[]> {
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    return [
+      {
+        module_id: 'Module ID 1',
+        module_name: 'Module Name 1',
+        description: 'Module Description 1',
+        credits: 3
+      },
+      {
+        module_id: 'Module ID 2',
+        module_name: 'Module Name 2',
+        description: 'Module Description 2',
+        credits: 3
+      },
+      {
+        module_id: 'Module ID 3',
+        module_name: 'Module Name 3',
+        description: 'Module Description 3',
+        credits: 3
+      },
+      {
+        module_id: 'Module ID 4',
+        module_name: 'Module Name 4',
+        description: 'Module Description 4',
+        credits: 3
+      },
+      {
+        module_id: 'Module ID 5',
+        module_name: 'Module Name 5',
+        description: 'Module Description 5',
+        credits: 3
       }
     ];
   }
