@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ISchool } from '../models/school.interface';
 import { ISchoolModule } from '../models/school-module.interface';
+import { ISchoolMember } from '../models/school-member.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -144,6 +145,43 @@ export class SchoolService {
         module_name: 'Module Name 5',
         description: 'Module Description 5',
         credits: 3
+      }
+    ];
+  }
+
+  async getSchoolMembers(school_id: string) : Promise<ISchoolMember[]> {
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    return [
+      {
+        member_id: 'Member ID 1',
+        member_name: 'Member Name 1',
+        member_role: 'Member Role 1',
+        member_photo_url: 'https://via.placeholder.com/509x500'
+      },
+      {
+        member_id: 'Member ID 2',
+        member_name: 'Member Name 2',
+        member_role: 'Member Role 2',
+        member_photo_url: 'https://via.placeholder.com/509x500'
+      },
+      {
+        member_id: 'Member ID 3',
+        member_name: 'Member Name 3',
+        member_role: 'Member Role 3',
+        member_photo_url: 'https://via.placeholder.com/509x500'
+      },
+      {
+        member_id: 'Member ID 4',
+        member_name: 'Member Name 4',
+        member_role: 'Member Role 4',
+        member_photo_url: 'https://via.placeholder.com/509x500'
+      },
+      {
+        member_id: 'Member ID 5',
+        member_name: 'Member Name 5',
+        member_role: 'Member Role 5',
+        member_photo_url: 'https://via.placeholder.com/509x500'
       }
     ];
   }

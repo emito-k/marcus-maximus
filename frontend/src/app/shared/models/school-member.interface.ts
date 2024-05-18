@@ -1,4 +1,4 @@
-export interface SchoolMember {
+export interface ISchoolMember {
   member_id: string;
   member_name: string;
   member_role: string;
