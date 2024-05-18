@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { SchoolModulesFeedComponent } from '../shared/components/school-modules-feed/school-modules-feed.component';
 import { SchoolService } from '../shared/services/school.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { ISchoolModule } from '../shared/models/school-module.interface';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -16,7 +16,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatInputModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterModule
   ],
   templateUrl: './school-page.component.html',
   styleUrl: './school-page.component.css'
