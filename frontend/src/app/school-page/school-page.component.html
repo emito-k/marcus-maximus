@@ -1,1 +1,14 @@
-<app-school-modules-feed [modules]="modules"></app-school-modules-feed>
+
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Search</mat-label>
+    <input matInput type="text" #search (change)="searchForModules(search.value)" placeholder="Search...">
+    @if (searching) {
+      <button matSuffix mat-icon-button aria-label="Clear" (click)="search.value=''; clearSearch()">
+        <mat-icon>close</mat-icon>
+      </button>
+    }
+  </mat-form-field>
+
+  <app-school-modules-feed [modules]="modules" [loading]="loading"></app-school-modules-feed>
+</form>
