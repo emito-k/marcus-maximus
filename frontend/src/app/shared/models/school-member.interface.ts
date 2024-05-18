@@ -3,4 +3,5 @@ export interface ISchoolMember {
   member_name: string;
   member_role: string;
   member_photo_url: string;
+  member_email?: string;
 }

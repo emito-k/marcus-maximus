@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ActivatedRoute } from '@angular/router';
 import { SchoolInformationComponent } from './forms/school-information/school-information.component';
+import { SchoolMembersListComponent } from './forms/school-members-list/school-members-list.component';
 @Component({
   selector: 'app-school-settings-page',
   standalone: true,
   imports: [
     MatTabsModule,
-    SchoolInformationComponent
+    SchoolInformationComponent,
+    SchoolMembersListComponent
   ],
   templateUrl: './school-settings-page.component.html',
   styleUrl: './school-settings-page.component.css'
