@@ -22,7 +22,13 @@ import { ISchoolMember } from '../shared/models/school-member.interface';
   styleUrl: './view-school-page.component.css'
 })
 export class ViewSchoolPageComponent {
-  school: ISchool | null = null;
+  school: ISchool = {
+    school_name: '',
+    school_id: '',
+    description: '',
+    thumbnail_url: '',
+    profile_url: ''
+  };
   modules: ISchoolModule[] = [];
   members: ISchoolMember[] = [];
 
