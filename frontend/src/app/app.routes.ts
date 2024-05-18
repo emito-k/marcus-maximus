@@ -12,7 +12,7 @@ import { MySchoolsPageComponent } from './my-schools-page/my-schools-page.compon
 export const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'account', component: AccountPageComponent },
-  { path: 'module', component: ModulePageComponent },
+  { path: 'school/:school_id/m/:module_id', component: ModulePageComponent },
   { path: 'module-settings', component: ModuleSettingsPageComponent },
   { path: 'school/:school_id', component: SchoolPageComponent },
   { path: 'school/:school_id/settings', component: SchoolSettingsPageComponent },
