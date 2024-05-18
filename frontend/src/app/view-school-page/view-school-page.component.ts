@@ -10,6 +10,7 @@ import { ISchoolModule } from '../shared/models/school-module.interface';
 import { ISchoolMember } from '../shared/models/school-member.interface';
 import { ModulesListComponent } from '../shared/components/modules-list/modules-list.component';
 import { MembersListComponent } from '../shared/components/members-list/members-list.component';
+import { SchoolBannerComponent } from '../shared/components/school-banner/school-banner.component';
 
 @Component({
   selector: 'app-view-school-page',
@@ -21,6 +22,7 @@ import { MembersListComponent } from '../shared/components/members-list/members-
     MatTabsModule,
     ModulesListComponent,
     MembersListComponent,
+    SchoolBannerComponent,
   ],
   templateUrl: './view-school-page.component.html',
   styleUrl: './view-school-page.component.css'
