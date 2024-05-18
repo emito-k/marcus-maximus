@@ -9,6 +9,8 @@ import { ISchool } from '../shared/models/school.interface';
 import { ISchoolModule } from '../shared/models/school-module.interface';
 import { ISchoolMember } from '../shared/models/school-member.interface';
 import { ModulesListComponent } from '../shared/components/modules-list/modules-list.component';
+import { MembersListComponent } from '../shared/components/members-list/members-list.component';
+
 @Component({
   selector: 'app-view-school-page',
   standalone: true,
@@ -17,7 +19,8 @@ import { ModulesListComponent } from '../shared/components/modules-list/modules-
     FlexLayoutModule,
     MatIconModule,
     MatTabsModule,
-    ModulesListComponent
+    ModulesListComponent,
+    MembersListComponent,
   ],
   templateUrl: './view-school-page.component.html',
   styleUrl: './view-school-page.component.css'
