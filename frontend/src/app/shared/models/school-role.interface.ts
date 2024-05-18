@@ -5,5 +5,5 @@ export interface ISchoolRole {
   role_name: string;
   role_description: string;
   school_id: string;
-  permissions?: ISystemPermission[];
+  permissions: ISystemPermission[];
 }
