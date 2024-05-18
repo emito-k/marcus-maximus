@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ISchool } from '../shared/models/school.interface';
 import { ISchoolModule } from '../shared/models/school-module.interface';
 import { ISchoolMember } from '../shared/models/school-member.interface';
-
+import { ModulesListComponent } from '../shared/components/modules-list/modules-list.component';
 @Component({
   selector: 'app-view-school-page',
   standalone: true,
@@ -16,7 +16,8 @@ import { ISchoolMember } from '../shared/models/school-member.interface';
     MatButtonModule,
     FlexLayoutModule,
     MatIconModule,
-    MatTabsModule
+    MatTabsModule,
+    ModulesListComponent
   ],
   templateUrl: './view-school-page.component.html',
   styleUrl: './view-school-page.component.css'
