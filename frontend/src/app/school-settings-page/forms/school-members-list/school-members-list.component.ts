@@ -4,12 +4,19 @@ import { SchoolService } from '../../../shared/services/school.service';
 import { MatTableModule } from '@angular/material/table';
 import { ISchoolMember } from '../../../shared/models/school-member.interface';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+
 @Component({
   selector: 'app-school-members-list',
   standalone: true,
   imports: [
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   templateUrl: './school-members-list.component.html',
   styleUrl: './school-members-list.component.css'
