@@ -6,6 +6,7 @@ import { ISchoolModule } from '../shared/models/school-module.interface';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-school-page',
@@ -14,7 +15,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     SchoolModulesFeedComponent,
     MatIconModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatButtonModule
   ],
   templateUrl: './school-page.component.html',
   styleUrl: './school-page.component.css'
