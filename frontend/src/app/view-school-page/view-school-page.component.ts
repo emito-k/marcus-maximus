@@ -33,7 +33,8 @@ export class ViewSchoolPageComponent {
     school_id: '',
     description: '',
     thumbnail_url: '',
-    profile_url: ''
+    profile_url: '',
+    enrolled: false,
   };
   modules: ISchoolModule[] = [];
   members: ISchoolMember[] = [];

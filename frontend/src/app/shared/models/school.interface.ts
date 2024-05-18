@@ -4,4 +4,5 @@ export interface ISchool {
   description: string;
   thumbnail_url: string;
   profile_url: string;
+  enrolled: boolean;
 }

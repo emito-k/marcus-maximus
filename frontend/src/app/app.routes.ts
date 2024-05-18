@@ -14,7 +14,7 @@ export const routes: Routes = [
   { path: 'account', component: AccountPageComponent },
   { path: 'module', component: ModulePageComponent },
   { path: 'module-settings', component: ModuleSettingsPageComponent },
-  { path: 'school', component: SchoolPageComponent },
+  { path: 'school/:school_id', component: SchoolPageComponent },
   { path: 'school-settings', component: SchoolSettingsPageComponent },
   { path: 'view/:school_id', component: ViewSchoolPageComponent },
   { path: 'modules', component: MyModulesPageComponent },

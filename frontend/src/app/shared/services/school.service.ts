@@ -18,7 +18,8 @@ export class SchoolService {
       A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
       bred for hunting.`,
       thumbnail_url: 'https://via.placeholder.com/750x600',
-      profile_url: 'https://via.placeholder.com/509x500'
+      profile_url: 'https://via.placeholder.com/509x500',
+      enrolled: false
     };
   }
 
@@ -34,7 +35,8 @@ export class SchoolService {
         A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
         bred for hunting.`,
         thumbnail_url: 'https://via.placeholder.com/750x600',
-        profile_url: 'https://via.placeholder.com/509x500'
+        profile_url: 'https://via.placeholder.com/509x500',
+        enrolled: false
       },
       {
         school_name: 'School Name 2',
@@ -43,7 +45,8 @@ export class SchoolService {
         A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
         bred for hunting.`,
         thumbnail_url: 'https://via.placeholder.com/750x600',
-        profile_url: 'https://via.placeholder.com/509x500'
+        profile_url: 'https://via.placeholder.com/509x500',
+        enrolled: false
       },
       {
         school_name: 'School Name 3',
@@ -52,7 +55,8 @@ export class SchoolService {
         A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
         bred for hunting.`,
         thumbnail_url: 'https://via.placeholder.com/750x600',
-        profile_url: 'https://via.placeholder.com/509x500'
+        profile_url: 'https://via.placeholder.com/509x500',
+        enrolled: false
       },
       {
         school_name: 'School Name 4',
@@ -61,7 +65,8 @@ export class SchoolService {
         A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
         bred for hunting.`,
         thumbnail_url: 'https://via.placeholder.com/750x600',
-        profile_url: 'https://via.placeholder.com/509x500'
+        profile_url: 'https://via.placeholder.com/509x500',
+        enrolled: false
       },
       {
         school_name: 'School Name 5',
@@ -70,7 +75,8 @@ export class SchoolService {
         A small, agile dog that copes very well with mountainous terrain
         bred for hunting.`,
         thumbnail_url: 'https://via.placeholder.com/750x600',
-        profile_url: 'https://via.placeholder.com/509x500'
+        profile_url: 'https://via.placeholder.com/509x500',
+        enrolled: false
       }
     ];
   }
@@ -87,7 +93,8 @@ export class SchoolService {
         A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
         bred for hunting.`,
         thumbnail_url: 'https://via.placeholder.com/750x600',
-        profile_url: 'https://via.placeholder.com/509x500'
+        profile_url: 'https://via.placeholder.com/509x500',
+        enrolled: false
       },
       {
         school_name: 'School Name 2',
@@ -96,7 +103,8 @@ export class SchoolService {
         A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
         bred for hunting.`,
         thumbnail_url: 'https://via.placeholder.com/750x600',
-        profile_url: 'https://via.placeholder.com/509x500'
+        profile_url: 'https://via.placeholder.com/509x500',
+        enrolled: false
       }
     ];
   }
