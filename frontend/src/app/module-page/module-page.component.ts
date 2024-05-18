@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ISchoolModule } from '../shared/models/school-module.interface';
 import { SchoolService } from '../shared/services/school.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { ISchoolMember } from '../shared/models/school-member.interface';
 import { MembersListComponent } from '../shared/components/members-list/members-list.component';
@@ -11,7 +11,8 @@ import { MembersListComponent } from '../shared/components/members-list/members-
   standalone: true,
   imports: [
     MatButtonModule,
-    MembersListComponent
+    MembersListComponent,
+    RouterModule
   ],
   templateUrl: './module-page.component.html',
   styleUrl: './module-page.component.css'

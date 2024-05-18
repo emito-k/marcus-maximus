@@ -13,7 +13,7 @@ export const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'account', component: AccountPageComponent },
   { path: 'school/:school_id/m/:module_id', component: ModulePageComponent },
-  { path: 'module-settings', component: ModuleSettingsPageComponent },
+  { path: 'school/:school_id/m/:module_id/settings', component: ModuleSettingsPageComponent },
   { path: 'school/:school_id', component: SchoolPageComponent },
   { path: 'school/:school_id/settings', component: SchoolSettingsPageComponent },
   { path: 'view/:school_id', component: ViewSchoolPageComponent },
