@@ -7,7 +7,7 @@ import { ISchoolRole } from '../models/school-role.interface';
 export class SchoolAdminService {
   constructor() { }
 
-  async getSchoolRoles(school_id: number): Promise<ISchoolRole[]> {
+  async getSchoolRoles(school_id: string): Promise<ISchoolRole[]> {
     // This is a mock implementation of the actual API call
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -35,4 +35,41 @@ export class SchoolAdminService {
     });
   }
 
+  async updateSchoolRole(role: ISchoolRole): Promise<ISchoolRole> {
+    // This is a mock implementation of the actual API call
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(role);
+      }, 1000);
+    });
+  }
+
+  async deleteSchoolRole(role_id: number): Promise<void> {
+    // This is a mock implementation of the actual API call
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 1000);
+    });
+  }
+
+  async createSchoolRole(role: ISchoolRole): Promise<ISchoolRole> {
+    // This is a mock implementation of the actual API call
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(role);
+      }, 1000);
+    });
+  }
+
+  async updateMemberRole(role: ISchoolRole): Promise<ISchoolRole> {
+    // This is a mock implementation of the actual API call
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(role);
+      }, 1000);
+    });
+  }
+
+  // async
 }
