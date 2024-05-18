@@ -14,7 +14,7 @@
     <td mat-cell *matCellDef="let role">
       <mat-form-field>
         <mat-label>Select permissions</mat-label>
-        <mat-select multiple>
+        <mat-select #me (valueChange)="printValue(me.value)" [value]="['1', '2']" multiple>
 
           @for (permission of role.permissions; track permission) {
             <mat-option [value]="permission.permission_id">{{permission.permission_name}}</mat-option>
