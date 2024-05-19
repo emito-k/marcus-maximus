@@ -2,22 +2,17 @@
 
 <mat-form-field>
   <mat-label>Title</mat-label>
-  <input matInput>
+  <input [(ngModel)]="module.module_name" matInput>
 </mat-form-field>
 
 <mat-form-field>
   <mat-label>Credits</mat-label>
-  <input matInput>
-</mat-form-field>
-
-<mat-form-field>
-  <mat-label>Department</mat-label>
-  <input matInput>
+  <input [(ngModel)]="module.credits" matInput>
 </mat-form-field>
 
 <mat-form-field>
   <mat-label>Description</mat-label>
-  <textarea matInput></textarea>
+  <textarea [(ngModel)]="module.description" matInput></textarea>
 </mat-form-field>
 
 <div>
