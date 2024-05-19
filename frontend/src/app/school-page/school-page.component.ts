@@ -7,6 +7,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { CreateModuleFormModalComponent } from './create-module-form-modal/create-module-form-modal.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-school-page',
@@ -17,7 +19,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-    RouterModule
+    RouterModule,
+    CreateModuleFormModalComponent
   ],
   templateUrl: './school-page.component.html',
   styleUrl: './school-page.component.css'
@@ -27,7 +30,7 @@ export class SchoolPageComponent {
   loading: boolean = true;
   searching: boolean = false;
 
-  constructor(private schoolService: SchoolService, private route: ActivatedRoute) {
+  constructor(private schoolService: SchoolService, private route: ActivatedRoute, public dialog: MatDialog) {
     const school_id = this.route.snapshot.paramMap.get('id') ?? '';
     this.getModules(school_id);
   }
@@ -48,5 +51,13 @@ export class SchoolPageComponent {
     this.searching = false;
     const school_id = this.route.snapshot.paramMap.get('id') ?? '';
     this.getModules(school_id);
+  }
+
+  openModal(): void {
+    // alert('Hello');
+    const dialogRef = this.dialog.open(CreateModuleFormModalComponent, {
+      width: '250px',
+      data: { name: 'test' }
+    });
   }
 }

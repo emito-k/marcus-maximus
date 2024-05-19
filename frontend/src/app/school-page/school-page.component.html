@@ -1,14 +1,15 @@
 
-<form class="example-form">
-  <button [routerLink]="['settings']" mat-flat-button color="primary">
-    <mat-icon>settings</mat-icon>
-    Settings
-  </button>
+<button [routerLink]="['settings']" mat-flat-button color="primary" class="w3-margin-right">
+  <mat-icon>settings</mat-icon>
+  Settings
+</button>
 
-  <button mat-flat-button color="primary">
-    <mat-icon>add</mat-icon>
-    Add Module
-  </button>
+<button mat-flat-button color="primary" (click)="openModal()">
+  <mat-icon>add</mat-icon>
+  Add Module
+</button>
+
+<form class="example-form">
 
   <mat-form-field class="example-full-width">
     <mat-label>Search</mat-label>
