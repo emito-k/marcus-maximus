@@ -303,19 +303,31 @@ const Permission = sequelize.define(
   }
 );
 
-// Define relationships
-PermissionRole.belongsTo(Role, { foreignKey: "role_id_fk" });
-PermissionRole.belongsTo(Permission, { foreignKey: "permission_id_fk" });
-Role.belongsTo(School, { foreignKey: "school_id_fk" });
-School.belongsTo(User, { foreignKey: "owner_user_id_fk" });
-Module.belongsTo(School, { foreignKey: "school_id_fk" });
-Audit.belongsTo(User, { foreignKey: "user_id_fk" });
-Member.belongsTo(User, { foreignKey: "user_id_fk" });
-Member.belongsTo(School, { foreignKey: "school_id_fk" });
-Member.belongsTo(Role, { foreignKey: "role_id_fk" });
-Registered.belongsTo(User, { foreignKey: "student_id_fk" });
-Registered.belongsTo(Module, { foreignKey: "module_id_fk" });
-Profile.belongsTo(User, { foreignKey: "user_id_fkd" });
+// Define relationships with cascade delete
+PermissionRole.belongsTo(Role, {
+  foreignKey: "role_id_fk",
+  onDelete: "CASCADE",
+});
+PermissionRole.belongsTo(Permission, {
+  foreignKey: "permission_id_fk",
+  onDelete: "CASCADE",
+});
+Role.belongsTo(School, { foreignKey: "school_id_fk", onDelete: "CASCADE" });
+School.belongsTo(User, { foreignKey: "owner_user_id_fk", onDelete: "CASCADE" });
+Module.belongsTo(School, { foreignKey: "school_id_fk", onDelete: "CASCADE" });
+Audit.belongsTo(User, { foreignKey: "user_id_fk", onDelete: "CASCADE" });
+Member.belongsTo(User, { foreignKey: "user_id_fk", onDelete: "CASCADE" });
+Member.belongsTo(School, { foreignKey: "school_id_fk", onDelete: "CASCADE" });
+Member.belongsTo(Role, { foreignKey: "role_id_fk", onDelete: "CASCADE" });
+Registered.belongsTo(User, {
+  foreignKey: "student_id_fk",
+  onDelete: "CASCADE",
+});
+Registered.belongsTo(Module, {
+  foreignKey: "module_id_fk",
+  onDelete: "CASCADE",
+});
+Profile.belongsTo(User, { foreignKey: "user_id_fkd", onDelete: "CASCADE" });
 
 // Export models and sequelize instance
 module.exports = {
