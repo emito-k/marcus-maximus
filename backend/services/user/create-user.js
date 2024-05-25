@@ -1,4 +1,4 @@
-const { User } = require("../data-access/sequalize");
+const { User } = require("../../data-access/sequalize");
 
 async function createUser(req, res) {
   try {
