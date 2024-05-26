@@ -55,7 +55,7 @@ const Member = sequelize.define(
     },
     role_id_fk: {
       type: DataTypes.BIGINT.UNSIGNED,
-      allowNull: false,
+      allowNull: true,
     },
     school_id_fk: {
       type: DataTypes.BIGINT.UNSIGNED,

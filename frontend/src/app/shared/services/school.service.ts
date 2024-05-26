@@ -12,16 +12,9 @@ export class SchoolService {
   constructor(private apiService: ApiService) { }
 
   async getSchoolDetail(id: string) : Promise<ISchool> {
-    return {
-      school_name: 'School Name',
-      school_id: 'School ID',
-      description: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.`,
-      thumbnail_url: 'https://via.placeholder.com/750x600',
-      profile_url: 'https://via.placeholder.com/509x500',
-      enrolled: false
-    };
+    return this.apiService.axios().get(`/school?id=${id}`).then((response: any) => {
+      return response.data.data[0];
+    });
   }
 
   async getSchools() : Promise<ISchool[]> {
@@ -35,121 +28,41 @@ export class SchoolService {
   }
 
   async getSchoolsBySearch(search: string) : Promise<ISchool[]> {
-    // add a delay to simulate network latency
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    return [
-      {
-        school_name: 'School Name 1',
-        school_id: 'School ID 1',
-        description: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.`,
-        thumbnail_url: 'https://via.placeholder.com/750x600',
-        profile_url: 'https://via.placeholder.com/509x500',
-        enrolled: false
-      },
-      {
-        school_name: 'School Name 2',
-        school_id: 'School ID 2',
-        description: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.`,
-        thumbnail_url: 'https://via.placeholder.com/750x600',
-        profile_url: 'https://via.placeholder.com/509x500',
-        enrolled: false
-      }
-    ];
+    return this.apiService.axios().get(`/school?description=${search}&school_name=${search}`).then((response: any) => {
+      return response.data.data;
+    })
+    .catch((error: any) => {
+      console.error(error);
+      return [];
+    });
   }
 
   async getSchoolModule(module_id: string) : Promise<ISchoolModule> {
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    return {
-      module_id: 'Module ID',
-      module_name: 'Module Name',
-      description: 'Module Description',
-      credits: 3,
-      school_id: 'School ID'
-    };
+    return this.apiService.axios().get(`/module?id=${module_id}`).then((response: any) => {
+      return response.data.data[0];
+    });
   }
 
   async getSchoolModules(school_id: string) : Promise<ISchoolModule[]> {
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    return [
-      {
-        module_id: 'Module ID 1',
-        module_name: 'Module Name 1',
-        description: 'Module Description 1',
-        credits: 3,
-        school_id: 'School ID 1'
-      },
-      {
-        module_id: 'Module ID 2',
-        module_name: 'Module Name 2',
-        description: 'Module Description 2',
-        credits: 3,
-        school_id: 'School ID 2'
-      },
-      {
-        module_id: 'Module ID 3',
-        module_name: 'Module Name 3',
-        description: 'Module Description 3',
-        credits: 3,
-        school_id: 'School ID 3'
-      },
-      {
-        module_id: 'Module ID 4',
-        module_name: 'Module Name 4',
-        description: 'Module Description 4',
-        credits: 3,
-        school_id: 'School ID 4'
-      },
-      {
-        module_id: 'Module ID 5',
-        module_name: 'Module Name 5',
-        description: 'Module Description 5',
-        credits: 3,
-        school_id: 'School ID 5'
-      }
-    ];
+    return this.apiService.axios().get(`/module?school_id=${school_id}`).then((response: any) => {
+      return response.data.data;
+    });
   }
 
   async getSchoolMembers(school_id: string) : Promise<ISchoolMember[]> {
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    return this.apiService.axios().get(`/member?school_id=${school_id}`).then((response: any) => {
 
-    return [
-      {
-        member_id: 'Member ID 1',
-        member_name: 'Member Name 1',
-        member_role: 'Member Role 1',
-        member_photo_url: 'https://via.placeholder.com/509x500'
-      },
-      {
-        member_id: 'Member ID 2',
-        member_name: 'Member Name 2',
-        member_role: 'Member Role 2',
-        member_photo_url: 'https://via.placeholder.com/509x500'
-      },
-      {
-        member_id: 'Member ID 3',
-        member_name: 'Member Name 3',
-        member_role: 'Member Role 3',
-        member_photo_url: 'https://via.placeholder.com/509x500'
-      },
-      {
-        member_id: 'Member ID 4',
-        member_name: 'Member Name 4',
-        member_role: 'Member Role 4',
-        member_photo_url: 'https://via.placeholder.com/509x500'
-      },
-      {
-        member_id: 'Member ID 5',
-        member_name: 'Member Name 5',
-        member_role: 'Member Role 5',
-        member_photo_url: 'https://via.placeholder.com/509x500'
-      }
-    ];
+      const members: ISchoolMember[] = response.data.data.map((member: any) => {
+        return {
+          member_id: member.id,
+          member_name: member.User.username,
+          member_role: member.Role.name,
+          member_photo_url: 'https://via.placeholder.com/150',
+          member_email: member.User.email
+        };
+      });
+
+      return members;
+    });
   }
 }

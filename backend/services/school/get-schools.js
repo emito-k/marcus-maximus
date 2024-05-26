@@ -24,18 +24,42 @@ async function getSchools(req, res) {
       };
     }
 
+    //   school_name: string;
+    // school_id: string;
+    // description: string;
+    // thumbnail_url: string;
+    // profile_url: string;
+    // enrolled: boolean;
+
     const schools = await School.findAll({
       where: filters,
+      attributes: [
+        "school_name",
+        ["id", "school_id"],
+        "description",
+        ["thumbail_url", "thumbnail_url"],
+      ],
     });
 
     if (schools.length === 0) {
-      return res.status(404).send("No schools found.");
+      return res.status(404).send({
+        message: "No schools found",
+        success: false,
+        data: [],
+      });
     }
 
-    res.status(200).send(schools);
+    res.status(200).send({
+      message: "Schools retrieved successfully",
+      success: true,
+      data: schools,
+    });
   } catch (error) {
     console.error(error);
-    res.status(500).send("An error occurred while retrieving the schools.");
+    res.status(500).send({
+      message: "An error occurred while retrieving schools.",
+      success: false,
+    });
   }
 }
 
