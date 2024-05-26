@@ -5,6 +5,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
+import { UserManagementService } from './shared/services/user-management.service';
+import { IUser } from './shared/models/user.interface';
+
+
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -20,5 +25,14 @@ import { RouterModule } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'frontend';
+  user: IUser | null = null;
+
+  constructor(private userManagementService: UserManagementService) {
+  }
+
+  ngOnInit() {
+    this.userManagementService.user$.subscribe(user => {
+      this.user = user;
+    });
+  }
 }

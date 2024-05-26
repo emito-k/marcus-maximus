@@ -45,34 +45,25 @@ async function getMembers(req, res) {
       ],
     });
 
-    // const members = await Member.findAll({
-    //   include: [
-    //     {
-    //       model: User,
-    //       as: "User",
-    //       attributes: ["id", ["username", "user_name"]],
-    //     },
-    //     {
-    //       model: Role,
-    //       as: "Role",
-    //       attributes: ["id", "name", "description"],
-    //     },
-    //     {
-    //       model: School,
-    //       as: "School",
-    //       attributes: ["id", "school_name"],
-    //     },
-    //   ],
-    // });
-
     if (members.length === 0) {
-      return res.status(404).send("No members found.");
+      return res.status(404).send({
+        message: "No members found",
+        success: true,
+        data: [],
+      });
     }
 
-    res.status(200).send(members);
+    res.status(200).send({
+      message: "Members retrieved successfully",
+      success: true,
+      data: members,
+    });
   } catch (error) {
     console.error(error);
-    res.status(500).send("An error occurred while retrieving the members.");
+    res.status(500).send({
+      message: "An error occurred while retrieving members.",
+      success: false,
+    });
   }
 }
 

@@ -32,6 +32,7 @@ const {
   getPermissionRoles,
   deletePermissionRole,
   updatePermissionRole,
+  login,
 } = require("./services");
 const { User } = require("./data-access/sequalize");
 
@@ -39,6 +40,13 @@ const router = express.Router();
 
 // add middleware to find the bearer token inside header and use it to find user
 router.use(async (req, res, next) => {
+  if (
+    (req.path === "/signup" || req.path === "/login") &&
+    req.method === "POST"
+  ) {
+    return next();
+  }
+
   const bearerToken = req.headers.authorization;
   if (!bearerToken) {
     return res.status(401).send("Unauthorized");
@@ -62,7 +70,9 @@ router.get("/helloworld", (req, res) => {
   res.send("Hello world!");
 });
 
-router.post("/user", createUser);
+router.post("/login", login);
+router.post("/signup", createUser);
+
 router.put("/user", updateUser);
 router.get("/user", getUsers);
 router.delete("/user", deleteUser);

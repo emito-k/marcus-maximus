@@ -32,10 +32,17 @@ async function getRoles(req, res) {
       where: filters,
     });
 
-    res.status(200).send(roles);
+    res.status(200).send({
+      message: "Roles retrieved successfully",
+      success: true,
+      data: roles,
+    });
   } catch (error) {
     console.error(error);
-    res.status(500).send("An error occurred while getting roles.");
+    res.status(500).send({
+      message: "An error occurred while retrieving roles.",
+      success: false,
+    });
   }
 }
 

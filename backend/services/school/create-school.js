@@ -1,4 +1,4 @@
-const { School } = require("../../data-access/sequalize");
+const { School, Role, Member } = require("../../data-access/sequalize");
 
 async function createSchool(req, res) {
   try {
@@ -12,6 +12,13 @@ async function createSchool(req, res) {
       description: description ?? "Description",
       thumbail_url: thumbail_url ?? "https://via.placeholder.com/150",
       owner_user_id_fk: user.id,
+    });
+
+    // Create
+    const role = await Role.create({
+      name: "Member",
+      description: "A member of the school.",
+      school_id_fk: school.id,
     });
 
     res.status(201).send(school);

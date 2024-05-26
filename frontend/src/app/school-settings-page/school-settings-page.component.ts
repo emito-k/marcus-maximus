@@ -22,6 +22,7 @@ export class SchoolSettingsPageComponent {
   constructor(private route: ActivatedRoute) {
     this.route.params.subscribe(params => {
       this.school_id = params['school_id'];
+      console.log(this.school_id);
     });
   }
 }

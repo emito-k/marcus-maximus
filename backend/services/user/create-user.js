@@ -14,10 +14,17 @@ async function createUser(req, res) {
       last_login: new Date(),
     });
 
-    res.status(201).send(user);
+    res.status(201).send({
+      message: "User created successfully",
+      success: true,
+      data: { ...user.toJSON(), token: user.id },
+    });
   } catch (error) {
     console.error(error);
-    res.status(500).send("An error occurred while creating the user.");
+    res.status(500).send({
+      message: "An error occurred while creating user.",
+      success: false,
+    });
   }
 }
 
