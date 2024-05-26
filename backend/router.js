@@ -28,6 +28,10 @@ const {
   updatePermission,
   getPermissions,
   deletePermission,
+  createPermissionRole,
+  getPermissionRoles,
+  deletePermissionRole,
+  updatePermissionRole,
 } = require("./services");
 const { User } = require("./data-access/sequalize");
 
@@ -92,5 +96,10 @@ router.post("/permission", createPermission);
 router.get("/permission", getPermissions);
 router.put("/permission", updatePermission);
 router.delete("/permission", deletePermission);
+
+router.post("/permission-role", createPermissionRole);
+router.get("/permission-role", getPermissionRoles);
+router.put("/permission-role", updatePermissionRole);
+router.delete("/permission-role", deletePermissionRole);
 
 module.exports = router;

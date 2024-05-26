@@ -26,6 +26,10 @@ const createPermission = require("./permission/create-permission");
 const updatePermission = require("./permission/update-permission");
 const getPermissions = require("./permission/get-permissions");
 const deletePermission = require("./permission/delete-permission");
+const createPermissionRole = require("./permission-role/create-permission-role");
+const getPermissionRoles = require("./permission-role/get-permission-roles");
+const deletePermissionRole = require("./permission-role/delete-permission-role");
+const updatePermissionRole = require("./permission-role/update-permission-role");
 
 module.exports = {
   createUser,
@@ -56,4 +60,8 @@ module.exports = {
   updatePermission,
   getPermissions,
   deletePermission,
+  createPermissionRole,
+  getPermissionRoles,
+  deletePermissionRole,
+  updatePermissionRole,
 };
