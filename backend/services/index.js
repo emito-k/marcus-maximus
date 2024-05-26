@@ -14,6 +14,10 @@ const createModule = require("./module/create-module");
 const updateModule = require("./module/update-module");
 const getModules = require("./module/get-modules");
 const deleteModule = require("./module/delete-module");
+const createMember = require("./member/create-member");
+const updateMember = require("./member/update-member");
+const getMembers = require("./member/get-members");
+const deleteMember = require("./member/delete-member");
 
 module.exports = {
   createUser,
@@ -32,4 +36,8 @@ module.exports = {
   updateModule,
   getModules,
   deleteModule,
+  createMember,
+  updateMember,
+  getMembers,
+  deleteMember,
 };

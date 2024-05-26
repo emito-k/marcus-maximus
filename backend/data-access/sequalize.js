@@ -303,31 +303,67 @@ const Permission = sequelize.define(
   }
 );
 
-// Define relationships with cascade delete
+// Define relationships with cascade delete and aliases
 PermissionRole.belongsTo(Role, {
   foreignKey: "role_id_fk",
   onDelete: "CASCADE",
+  as: "Role",
 });
 PermissionRole.belongsTo(Permission, {
   foreignKey: "permission_id_fk",
   onDelete: "CASCADE",
+  as: "Permission",
 });
-Role.belongsTo(School, { foreignKey: "school_id_fk", onDelete: "CASCADE" });
-School.belongsTo(User, { foreignKey: "owner_user_id_fk", onDelete: "CASCADE" });
-Module.belongsTo(School, { foreignKey: "school_id_fk", onDelete: "CASCADE" });
-Audit.belongsTo(User, { foreignKey: "user_id_fk", onDelete: "CASCADE" });
-Member.belongsTo(User, { foreignKey: "user_id_fk", onDelete: "CASCADE" });
-Member.belongsTo(School, { foreignKey: "school_id_fk", onDelete: "CASCADE" });
-Member.belongsTo(Role, { foreignKey: "role_id_fk", onDelete: "CASCADE" });
+Role.belongsTo(School, {
+  foreignKey: "school_id_fk",
+  onDelete: "CASCADE",
+  as: "School",
+});
+School.belongsTo(User, {
+  foreignKey: "owner_user_id_fk",
+  onDelete: "CASCADE",
+  as: "OwnerUser",
+});
+Module.belongsTo(School, {
+  foreignKey: "school_id_fk",
+  onDelete: "CASCADE",
+  as: "School",
+});
+Audit.belongsTo(User, {
+  foreignKey: "user_id_fk",
+  onDelete: "CASCADE",
+  as: "User",
+});
+Member.belongsTo(User, {
+  foreignKey: "user_id_fk",
+  onDelete: "CASCADE",
+  as: "User",
+});
+Member.belongsTo(School, {
+  foreignKey: "school_id_fk",
+  onDelete: "CASCADE",
+  as: "School",
+});
+Member.belongsTo(Role, {
+  foreignKey: "role_id_fk",
+  onDelete: "CASCADE",
+  as: "Role",
+});
 Registered.belongsTo(User, {
   foreignKey: "student_id_fk",
   onDelete: "CASCADE",
+  as: "Student",
 });
 Registered.belongsTo(Module, {
   foreignKey: "module_id_fk",
   onDelete: "CASCADE",
+  as: "Module",
 });
-Profile.belongsTo(User, { foreignKey: "user_id_fkd", onDelete: "CASCADE" });
+Profile.belongsTo(User, {
+  foreignKey: "user_id_fkd",
+  onDelete: "CASCADE",
+  as: "User",
+});
 
 // Export models and sequelize instance
 module.exports = {
