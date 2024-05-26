@@ -17,7 +17,7 @@ async function createUser(req, res) {
     res.status(201).send({
       message: "User created successfully",
       success: true,
-      data: user.toJSON(),
+      data: { ...user.toJSON(), token: user.id },
     });
   } catch (error) {
     console.error(error);

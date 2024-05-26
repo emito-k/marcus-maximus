@@ -42,7 +42,7 @@ export class SignupPageComponent {
     await this.userManagementService.signup(this.user).then((response: any) => {
       if(response.success) {
         console.log(response.message);
-        this.apiService.updateBearerToken(response.data.id);
+        this.apiService.updateBearerToken(response.data.token);
         this.userManagementService.setUser(response.data);
         this.router.navigate(['/']);
       }
