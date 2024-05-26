@@ -24,6 +24,10 @@ const {
   createRegister,
   updateRegistered,
   deleteRegistered,
+  createPermission,
+  updatePermission,
+  getPermissions,
+  deletePermission,
 } = require("./services");
 const { User } = require("./data-access/sequalize");
 
@@ -83,5 +87,10 @@ router.post("/register", createRegister);
 router.get("/register", getRegistered);
 router.put("/register", updateRegistered);
 router.delete("/register", deleteRegistered);
+
+router.post("/permission", createPermission);
+router.get("/permission", getPermissions);
+router.put("/permission", updatePermission);
+router.delete("/permission", deletePermission);
 
 module.exports = router;

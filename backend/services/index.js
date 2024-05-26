@@ -22,6 +22,10 @@ const createRegister = require("./registered/create-register");
 const updateRegistered = require("./registered/update-registered");
 const getRegistered = require("./registered/get-registered");
 const deleteRegistered = require("./registered/delete-registered");
+const createPermission = require("./permission/create-permission");
+const updatePermission = require("./permission/update-permission");
+const getPermissions = require("./permission/get-permissions");
+const deletePermission = require("./permission/delete-permission");
 
 module.exports = {
   createUser,
@@ -48,4 +52,8 @@ module.exports = {
   updateRegistered,
   getRegistered,
   deleteRegistered,
+  createPermission,
+  updatePermission,
+  getPermissions,
+  deletePermission,
 };
