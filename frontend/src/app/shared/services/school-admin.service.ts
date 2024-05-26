@@ -1,75 +1,24 @@
 import { Injectable } from '@angular/core';
 import { ISchoolRole } from '../models/school-role.interface';
 import { ISystemPermission } from '../models/system-permission.interface';
+import { ApiService } from './api.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SchoolAdminService {
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
   async getSchoolRoles(school_id: string): Promise<ISchoolRole[]> {
-    // This is a mock implementation of the actual API call
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve([
-          {
-            role_id: 1,
-            role_name: 'Admin',
-            role_description: 'Admin role',
-            school_id: school_id,
-            permissions: [
-              {
-                permission_id: '1',
-                permission_name: 'Create',
-                permission_description: 'Create permission'
-              },
-              {
-                permission_id: '2',
-                permission_name: 'Read',
-                permission_description: 'Read permission'
-              },
-              {
-                permission_id: '3',
-                permission_name: 'Update',
-                permission_description: 'Update permission'
-              },
-              {
-                permission_id: '4',
-                permission_name: 'Delete',
-                permission_description: 'Delete permission'
-              }
-            ]
-          },
-          {
-            role_id: 2,
-            role_name: 'Teacher',
-            role_description: 'Teacher role',
-            school_id: school_id,
-            permissions: [
-              {
-                permission_id: '2',
-                permission_name: 'Read',
-                permission_description: 'Read permission'
-              }
-            ]
-
-          },
-          {
-            role_id: 3,
-            role_name: 'Student',
-            role_description: 'Student role',
-            school_id: school_id,
-            permissions: [
-              {
-                permission_id: '2',
-                permission_name: 'Read',
-                permission_description: 'Read permission'
-              }
-            ]
-          }
-        ]);
-      }, 1000);
+    return this.apiService.axios().get(`/role?school_id=${school_id}`).then((response: any) => {
+      return response.data.data.map((payload: any) => {
+        return {
+          role_id: payload.Role.id,
+          role_name: payload.Role.name,
+          role_description: payload.Role.description,
+          role_permissions: []
+        };
+      });
     });
   }
 
