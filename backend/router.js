@@ -6,6 +6,12 @@ const {
   deleteUser,
   getSchools,
   createSchool,
+  updateSchool,
+  deleteSchool,
+  createRole,
+  getRoles,
+  updateRole,
+  deleteRole,
 } = require("./services");
 const { User } = require("./data-access/sequalize");
 
@@ -43,5 +49,12 @@ router.delete("/user", deleteUser);
 
 router.post("/school", createSchool);
 router.get("/school", getSchools);
+router.put("/school", updateSchool);
+router.delete("/school", deleteSchool);
+
+router.post("/role", createRole);
+router.get("/role", getRoles);
+router.put("/role", updateRole);
+router.delete("/role", deleteRole);
 
 module.exports = router;
