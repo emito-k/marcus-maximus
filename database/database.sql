@@ -37,7 +37,7 @@ CREATE TABLE `Module`(
 );
 CREATE TABLE `Registered`(
     `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `student_id_fk` BIGINT NOT NULL,
+    `member_id_fk` BIGINT NOT NULL,
     `module_id_fk` BIGINT NOT NULL
 );
 CREATE TABLE `Role`(
@@ -74,9 +74,9 @@ ALTER TABLE
 ALTER TABLE
     `Audit` ADD CONSTRAINT `audit_user_id_fk_foreign` FOREIGN KEY(`user_id_fk`) REFERENCES `User`(`id`);
 ALTER TABLE
-    `Member` ADD CONSTRAINT `member_user_id_fk_foreign` FOREIGN KEY(`user_id_fk`) REFERENCES `User`(`id`);
+    `Registered` ADD CONSTRAINT `registered_member_id_fk_foreign` FOREIGN KEY(`member_id_fk`) REFERENCES `Member`(`id`);
 ALTER TABLE
-    `Registered` ADD CONSTRAINT `registered_student_id_fk_foreign` FOREIGN KEY(`student_id_fk`) REFERENCES `User`(`username`);
+    `Member` ADD CONSTRAINT `member_user_id_fk_foreign` FOREIGN KEY(`user_id_fk`) REFERENCES `User`(`id`);
 ALTER TABLE
     `Profile` ADD CONSTRAINT `profile_user_id_fkd_foreign` FOREIGN KEY(`user_id_fkd`) REFERENCES `User`(`id`);
 ALTER TABLE
