@@ -332,7 +332,7 @@ Module.belongsTo(School, {
 });
 Audit.belongsTo(User, {
   foreignKey: "user_id_fk",
-  onDelete: "CASCADE",
+  // onDelete: "CASCADE",
   as: "User",
 });
 Member.belongsTo(User, {
