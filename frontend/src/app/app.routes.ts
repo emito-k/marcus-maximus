@@ -9,6 +9,7 @@ import { ViewSchoolPageComponent } from './view-school-page/view-school-page.com
 import { MyModulesPageComponent } from './my-modules-page/my-modules-page.component';
 import { MySchoolsPageComponent } from './my-schools-page/my-schools-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { SignupPageComponent } from './signup-page/signup-page.component';
 
 export const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -21,5 +22,5 @@ export const routes: Routes = [
   { path: 'modules', component: MyModulesPageComponent },
   { path: 'schools', component: MySchoolsPageComponent },
   { path: 'login', component: LoginPageComponent},
-  // { path: '' }
+  { path: 'signup', component: SignupPageComponent }
 ];
