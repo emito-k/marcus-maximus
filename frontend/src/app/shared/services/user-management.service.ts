@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { IUser } from '../models/user.interface';
 import { ApiService } from './api.service';
 
@@ -7,9 +8,13 @@ import { ApiService } from './api.service';
 })
 export class UserManagementService {
 
-  constructor(private apiService: ApiService) { }
+  private userSubject: BehaviorSubject<IUser | null>;
+  public user$: Observable<IUser | null>;
 
-  user?: IUser;
+  constructor(private apiService: ApiService) {
+    this.userSubject = new BehaviorSubject<IUser | null>(null);
+    this.user$ = this.userSubject.asObservable();
+  }
 
   async login(username: string, password: string): Promise<IUser> {
     const response = await this.apiService.axios().post('/login', {
@@ -17,19 +22,24 @@ export class UserManagementService {
       password
     });
 
-    return response.data;
+    const user = response.data;
+    this.setUser(user); // Update the user subject
+    return user;
   }
 
   async signup(user: IUser): Promise<IUser> {
     const response = await this.apiService.axios().post('/signup', user);
-    return response.data;
+
+    const newUser = response.data;
+    this.setUser(newUser); // Update the user subject
+    return newUser;
   }
 
-  async setUser(user: IUser): Promise<void> {
-    this.user = user;
+  setUser(user: IUser): void {
+    this.userSubject.next(user);
   }
 
-  async getUser(): Promise<IUser | undefined | null> {
-    return this.user;
+  getUser(): IUser | null {
+    return this.userSubject.value;
   }
 }

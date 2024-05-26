@@ -14,8 +14,21 @@
       <a [routerLink]="['/home']" routerLinkActive="router-link-active"  class="w3-bar-item w3-xlarge w3-button"><i class="fa fa-home"></i> Home</a>
       <a [routerLink]="['/schools']" routerLinkActive="router-link-active"  class="w3-bar-item w3-xlarge w3-button"><i class="fa fa-building-o"></i> Schools</a>
       <a [routerLink]="['/modules']" routerLinkActive="router-link-active"  class="w3-bar-item w3-xlarge w3-button"><i class="fa fa-book"></i> Modules</a>
-      <a [routerLink]="['/account']" routerLinkActive="router-link-active"  class="w3-bar-item w3-xlarge w3-button"><i class="fa fa-user-o"></i> My Account</a>
-      <a [routerLink]="['/home']" routerLinkActive="router-link-active"  class="w3-bar-item w3-xlarge w3-button"><i class="fa fa-sign-out"></i> Logout</a>
+      <a [routerLink]="['/account']" routerLinkActive="router-link-active"  class="w3-bar-item w3-xlarge w3-button"><i class="fa fa-user-o"></i>
+      @if (user) {
+        {{ user.first_name }} {{ user.last_name }}
+      }
+      @else {
+        My Account
+      }
+      </a>
+
+      @if (user) {
+        <a [routerLink]="['/login']" routerLinkActive="router-link-active"  class="w3-bar-item w3-xlarge w3-button"><i class="fa fa-sign-out"></i> Logout</a>
+      }
+      @else {
+        <a [routerLink]="['/login']" routerLinkActive="router-link-active"  class="w3-bar-item w3-xlarge w3-button"><i class="fa fa-sign-in"></i> Login</a>
+      }
 
     <!--
       export const routes: Routes = [

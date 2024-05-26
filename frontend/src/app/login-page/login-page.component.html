@@ -1,26 +1,16 @@
-<h2>My Account</h2>
-
-<mat-form-field>
-  <mat-label>First name</mat-label>
-  <input [(ngModel)]="user.first_name" matInput>
-</mat-form-field>
-
-<mat-form-field>
-  <mat-label>Last name</mat-label>
-  <input [(ngModel)]="user.last_name" matInput>
-</mat-form-field>
-
-<mat-form-field>
-  <mat-label>Username</mat-label>
-  <input [(ngModel)]="user.username" matInput>
-</mat-form-field>
+<h2>Login</h2>
 
 <mat-form-field>
   <mat-label>Email</mat-label>
   <input [(ngModel)]="user.email" matInput>
 </mat-form-field>
 
+<mat-form-field>
+  <mat-label>Password</mat-label>
+  <input type="password" [(ngModel)]="user.password" matInput>
+</mat-form-field>
+
 <div>
-  <button mat-raised-button color="primary" class="w3-margin-right">Save</button>
-  <button mat-raised-button color="warn">Delete</button>
+  <button (click)="login()" mat-raised-button color="primary" class="w3-margin-right">Login</button>
+  <button routerLink="/signup" mat-raised-button color="warn">Sign up</button>
 </div>
