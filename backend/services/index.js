@@ -10,6 +10,10 @@ const createRole = require("./role/create-role");
 const getRoles = require("./role/get-roles");
 const deleteRole = require("./role/delete-role");
 const updateRole = require("./role/update-role");
+const createModule = require("./module/create-module");
+const updateModule = require("./module/update-module");
+const getModules = require("./module/get-modules");
+const deleteModule = require("./module/delete-module");
 
 module.exports = {
   createUser,
@@ -24,4 +28,8 @@ module.exports = {
   getRoles,
   deleteRole,
   updateRole,
+  createModule,
+  updateModule,
+  getModules,
+  deleteModule,
 };

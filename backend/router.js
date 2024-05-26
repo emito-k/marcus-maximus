@@ -12,6 +12,10 @@ const {
   getRoles,
   updateRole,
   deleteRole,
+  createModule,
+  updateModule,
+  getModules,
+  deleteModule,
 } = require("./services");
 const { User } = require("./data-access/sequalize");
 
@@ -56,5 +60,10 @@ router.post("/role", createRole);
 router.get("/role", getRoles);
 router.put("/role", updateRole);
 router.delete("/role", deleteRole);
+
+router.post("/module", createModule);
+router.get("/module", getModules);
+router.put("/module", updateModule);
+router.delete("/module", deleteModule);
 
 module.exports = router;
