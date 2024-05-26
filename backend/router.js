@@ -20,6 +20,10 @@ const {
   updateMember,
   getMembers,
   deleteMember,
+  getRegistered,
+  createRegister,
+  updateRegistered,
+  deleteRegistered,
 } = require("./services");
 const { User } = require("./data-access/sequalize");
 
@@ -74,5 +78,10 @@ router.post("/member", createMember);
 router.get("/member", getMembers);
 router.put("/member", updateMember);
 router.delete("/member", deleteMember);
+
+router.post("/register", createRegister);
+router.get("/register", getRegistered);
+router.put("/register", updateRegistered);
+router.delete("/register", deleteRegistered);
 
 module.exports = router;

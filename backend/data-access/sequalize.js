@@ -185,7 +185,8 @@ const Registered = sequelize.define(
       autoIncrement: true,
       primaryKey: true,
     },
-    student_id_fk: {
+    member_id_fk: {
+      // changed from student_id_fk to member_id_fk
       type: DataTypes.BIGINT.UNSIGNED,
       allowNull: false,
     },
@@ -349,10 +350,11 @@ Member.belongsTo(Role, {
   onDelete: "CASCADE",
   as: "Role",
 });
-Registered.belongsTo(User, {
-  foreignKey: "student_id_fk",
+Registered.belongsTo(Member, {
+  // changed from User to Member
+  foreignKey: "member_id_fk", // NOTE: changed from student_id_fk to member_id_fk @emito-k, careful migration
   onDelete: "CASCADE",
-  as: "Student",
+  as: "Member",
 });
 Registered.belongsTo(Module, {
   foreignKey: "module_id_fk",
