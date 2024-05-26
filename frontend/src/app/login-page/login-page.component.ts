@@ -22,7 +22,7 @@ import { IUser } from '../shared/models/user.interface';
 })
 export class LoginPageComponent {
   user: IUser = {
-    user_id: '',
+    id: '',
     username: '',
     password: '',
     email: '',

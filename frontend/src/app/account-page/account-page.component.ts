@@ -22,7 +22,7 @@ import { IUser } from '../shared/models/user.interface';
 })
 export class AccountPageComponent {
   user: IUser = {
-    user_id: '',
+    id: '',
     username: '',
     password: '',
     email: '',
@@ -37,6 +37,6 @@ export class AccountPageComponent {
   }
 
   async getCurrentlyLoggedInUser() {
-    this.user = await this.userManagementService.getCurrentlyLoggedInUser();
+    // this.user = await this.userManagementService.getCurrentlyLoggedInUser();
   }
 }

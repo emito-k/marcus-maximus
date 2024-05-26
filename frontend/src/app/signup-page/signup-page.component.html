@@ -17,10 +17,15 @@
 
 <mat-form-field>
   <mat-label>Email</mat-label>
-  <input [(ngModel)]="user.email" matInput>
+  <input type="email" [(ngModel)]="user.email" matInput>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Password</mat-label>
+  <input type="password" [(ngModel)]="user.password" matInput>
 </mat-form-field>
 
 <div>
-  <button mat-raised-button color="primary" class="w3-margin-right">Save</button>
-  <button mat-raised-button color="warn">Delete</button>
+  <button mat-raised-button color="primary" (click)="signup()" class="w3-margin-right">Sign up</button>
+  <button mat-raised-button color="warn" routerLink='/login'>Login</button>
 </div>

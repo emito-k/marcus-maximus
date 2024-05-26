@@ -19,6 +19,7 @@ export class ApiService {
 
   updateBearerToken(token: string) {
     this.axiosInstance.defaults.headers.common['Authorization'] = 'Bearer ' + token;
+    localStorage.setItem('token', token);
   }
 
   axios() {
