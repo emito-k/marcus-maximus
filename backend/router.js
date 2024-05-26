@@ -1,5 +1,5 @@
 const express = require("express");
-const { createUser, updateUser, getUsers } = require("./services");
+const { createUser, updateUser, getUsers, deleteUser } = require("./services");
 
 const router = express.Router();
 
@@ -10,5 +10,6 @@ router.get("/helloworld", (req, res) => {
 router.post("/user", createUser);
 router.put("/user", updateUser);
 router.get("/user", getUsers);
+router.delete("/user", deleteUser);
 
 module.exports = router;
