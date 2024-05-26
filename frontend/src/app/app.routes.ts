@@ -8,9 +8,10 @@ import { SchoolSettingsPageComponent } from './school-settings-page/school-setti
 import { ViewSchoolPageComponent } from './view-school-page/view-school-page.component';
 import { MyModulesPageComponent } from './my-modules-page/my-modules-page.component';
 import { MySchoolsPageComponent } from './my-schools-page/my-schools-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 export const routes: Routes = [
-  { path: 'home', component: HomePageComponent },
+  { path: '', component: HomePageComponent },
   { path: 'account', component: AccountPageComponent },
   { path: 'school/:school_id/m/:module_id', component: ModulePageComponent },
   { path: 'school/:school_id/m/:module_id/settings', component: ModuleSettingsPageComponent },
@@ -18,5 +19,7 @@ export const routes: Routes = [
   { path: 'school/:school_id/settings', component: SchoolSettingsPageComponent },
   { path: 'view/:school_id', component: ViewSchoolPageComponent },
   { path: 'modules', component: MyModulesPageComponent },
-  { path: 'schools', component: MySchoolsPageComponent }
+  { path: 'schools', component: MySchoolsPageComponent },
+  { path: 'login', component: LoginPageComponent},
+  // { path: '' }
 ];
