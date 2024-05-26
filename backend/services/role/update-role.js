@@ -14,12 +14,6 @@ async function updateRole(req, res) {
       return res.status(404).send("Role not found.");
     }
 
-    if (role.owner_user_id_fk !== user.id) {
-      return res
-        .status(403)
-        .send("You are not authorized to update this role.");
-    }
-
     // Update the role
     await role.update({
       name: name ?? role.name,

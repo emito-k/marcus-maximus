@@ -14,12 +14,6 @@ async function deleteRole(req, res) {
       return res.status(404).send("Role not found.");
     }
 
-    if (role.owner_user_id_fk !== user.id) {
-      return res
-        .status(403)
-        .send("You are not authorized to delete this role.");
-    }
-
     // Delete the role
     await role.destroy();
 
